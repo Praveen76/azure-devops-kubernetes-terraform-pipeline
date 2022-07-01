@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "k8stestdev-4773"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "k8stestdev-4773"
+  template:
+    metadata:
+      labels:
+        app: "k8stestdev-4773"
+    spec:
+      containers:
+        - name: "k8stestdev-4773"
+          image: "acrforaksdemo4.azurecr.io/k8stestdev"
+          ports:
+          - containerPort: 5000
